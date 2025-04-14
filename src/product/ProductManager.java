@@ -3,23 +3,45 @@ package product;
 import java.util.ArrayList;
 
 public class ProductManager {
-	public static void ProductManager() {
+	public static void main(String[] args) {
+
+		ArrayList<Product> id = new ArrayList<Product>();
+		ArrayList<Product> name = new ArrayList<Product>();
+		ArrayList<Product> price = new ArrayList<Product>();
+		ArrayList<Product> stook = new ArrayList<Product>();
+		
 		//addProduct
-		ArrayList<String> product = new ArrayList<String>();
-		product.add("Product : id=1, name=冷蔵庫, price=50000, stock=10");
-		product.add("Product : id=2, name=ソファ, price=30000, stock=5");
-		product.add("Product : id=3, name=米, price=2000, stock=3");
-		product.add("Product : id=4, name=小説, price=1500, stock=4");
-		product.add("Product : id=5, name=Tシャツ, price=1500, stock=5");
+		id.add(new Product("1"));
+		id.add(new Product("2"));
+		id.add(new Product("3"));
+		id.add(new Product("4"));
+		id.add(new Product("5"));
 
-		System.out.println(product);
+		name.add(new Product("冷蔵庫"));
+		name.add(new Product("ソファ"));
+		name.add(new Product("米"));
+		name.add(new Product("小説"));
+		name.add(new Product("Tシャツ"));
 
+		price.add(new Product("50000"));
+		price.add(new Product("30000"));
+		price.add(new Product("2000"));
+		price.add(new Product("1500"));
+		price.add(new Product("1500"));
+
+		stook.add(new Product("10"));
+		stook.add(new Product("5"));
+		stook.add(new Product("3"));
+		stook.add(new Product("4"));
+		stook.add(new Product("5"));
+
+		 System.out.println("Product:"+id);
+		
 		//removeProduct
-		product.remove(0);
-		System.out.println(product);
+		id.remove(1);
 
 		//getProductByName
-		System.out.println(product.get(1));
-
+		name.get(3);
+		
 	}
 }

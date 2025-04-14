@@ -9,15 +9,7 @@ public class Product {
 	int stock;
 
 	//コンストラクタ
-	Product(String n) {
-		name = n;
-	}
-
-	Product(String n, int i, int p, int s) {
-		name = n;
-		id = i;
-		price = p;
-		stock = s;
+	public Product(String string) {
 	}
 
 	//メソッド(getter setter)
