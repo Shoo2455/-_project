@@ -7,13 +7,12 @@ public class Product {
 	String name;
 	int price;
 	int stock;
-
+	
 	//コンストラクタ
-	public Product(String string) {
+	public Product(int i, String string, int j, int k) {
 	}
-
+	
 	//メソッド(getter setter)
-
 	public int getId() {
 		return id;
 	}
