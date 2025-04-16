@@ -39,5 +39,6 @@ public class ProductManager {
 
 	public List<Product> getAllProducts() {
 		return products;
+
 	}
 }
