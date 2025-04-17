@@ -12,30 +12,21 @@ public class Main {
 		manager.addProduct(new Product(5, "Tシャツ", 1500, 5));
 
 		System.out.println("---商品を5つ追加して全てを表示する---");
-		for (Product product : manager.getAllProducts()) { 
-			System.out.println(product.getId());
-			System.out.println(product.getName());
-			System.out.println(product.getPrice());
-			System.out.println(product.getStock());
+		for (Product product : manager.getAllProducts()) {
+			System.out.println(product);
 		}
 
 		manager.removeProduct(1);
 
 		System.out.println("\n---商品を1つ削除して全てを表示する---");
 		for (Product product : manager.getAllProducts()) {
-			System.out.println(product.getId());
-			System.out.println(product.getName());
-			System.out.println(product.getPrice());
-			System.out.println(product.getStock());
+			System.out.println(product);
 		}
 
 		System.out.println("\n---商品名「米」の情報を表示する---");
-		Product rice = manager.getProductByName("米"); 
+		Product rice = manager.getProductByName("米");
 		if (rice != null) {
-			System.out.println(rice.getId());
-			System.out.println(rice.getName());
-			System.out.println(rice.getPrice());
-			System.out.println(rice.getStock());
+			System.out.println(rice);
 		} else {
 			System.out.println("商品「米」は見つかりませんでした。");
 		}
