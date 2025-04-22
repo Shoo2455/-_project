@@ -3,10 +3,10 @@ package product;
 public class Product {
 
 	//フィールド
-	private int id;
-	private String name;
-	private int price;
-	private int stock;
+	protected int id;
+	protected String name;
+	protected int price;
+	protected int stock;
 
 	//コンストラクタ
 	public Product() {

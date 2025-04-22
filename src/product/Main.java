@@ -1,15 +1,17 @@
 package product;
 
 public class Main {
+	private static final String String = null;
+
 	public static void main(String[] args) {
 
 		ProductManager manager = new ProductManager();
 
-		manager.addProduct(new Product(1, "冷蔵庫", 50000, 10));
-		manager.addProduct(new Product(2, "ソファ", 30000, 5));
-		manager.addProduct(new Product(3, "米", 2000, 3));
-		manager.addProduct(new Product(4, "小説", 1500, 4));
-		manager.addProduct(new Product(5, "Tシャツ", 1500, 5));
+		manager.addProduct(new DiscountedProduct(1, "冷蔵庫", 50000, 10, 0));
+		manager.addProduct(new DiscountedProduct(2, "ソファ", 30000, 5, 0.3));
+		manager.addProduct(new DiscountedProduct(3, "米", 2000, 3, 0));
+		manager.addProduct(new DiscountedProduct(4, "小説", 1500, 4, 0));
+		manager.addProduct(new DiscountedProduct(5, "Tシャツ", 1500, 5, 0));
 
 		System.out.println("---商品を5つ追加して全てを表示する---");
 		for (Product product : manager.getAllProducts()) {
@@ -30,5 +32,31 @@ public class Main {
 		} else {
 			System.out.println("商品「米」は見つかりませんでした。");
 		}
+
+		//⑤週目課題
+		System.out.println("\n---商品名「ソファ」の情報と割引率30%の情報を表示する---");
+		Product sofa = manager.getProductByName("ソファ");
+		if (sofa != null) {
+			System.out.print(sofa);
+		}
+		double price = calculateDiscountedPrice(30000, 0.3);
+		
+		System.out.print(", 割引後価格=");
+		System.out.println(price);
+
+		//Searchableメソッド
+		System.out.println("\n---商品名「Tシャツ」を検索して表示する---");
+		Product product = manager.search("Tシャツ");
+		if (product != null) {
+			System.out.println(product);
+		} else {
+			System.out.println("商品「Tシャツ」は見つかりませんでした。");
+		}
 	}
-}
+
+	private static double calculateDiscountedPrice(int i, double d) {
+		
+		return i * (1 - d);
+	}
+
+	}
