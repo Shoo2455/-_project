@@ -40,7 +40,7 @@ public class Main {
 			System.out.print(sofa);
 		}
 		double price = calculateDiscountedPrice(30000, 0.3);
-		
+
 		System.out.print(", 割引後価格=");
 		System.out.println(price);
 
@@ -55,8 +55,7 @@ public class Main {
 	}
 
 	private static double calculateDiscountedPrice(int i, double d) {
-		
+
 		return i * (1 - d);
 	}
-
-	}
+}
