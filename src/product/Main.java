@@ -1,8 +1,6 @@
 package product;
 
 public class Main {
-	private static final String String = null;
-
 	public static void main(String[] args) {
 
 		ProductManager manager = new ProductManager();
@@ -37,12 +35,8 @@ public class Main {
 		System.out.println("\n---商品名「ソファ」の情報と割引率30%の情報を表示する---");
 		Product sofa = manager.getProductByName("ソファ");
 		if (sofa != null) {
-			System.out.print(sofa);
+			System.out.println(sofa);
 		}
-		double price = calculateDiscountedPrice(30000, 0.3);
-
-		System.out.print(", 割引後価格=");
-		System.out.println(price);
 
 		//Searchableメソッド
 		System.out.println("\n---商品名「Tシャツ」を検索して表示する---");
@@ -52,10 +46,5 @@ public class Main {
 		} else {
 			System.out.println("商品「Tシャツ」は見つかりませんでした。");
 		}
-	}
-
-	private static double calculateDiscountedPrice(int i, double d) {
-
-		return i * (1 - d);
 	}
 }

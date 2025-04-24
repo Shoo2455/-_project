@@ -44,19 +44,12 @@ public class ProductManager {
 	}
 
 	// searchableインターフェース
-	public class Main implements Searchable {
-		public List<DiscountedProduct> search(String keyword) {
-			for (DiscountedProduct product : products) {
-				if (product.getName().contains(keyword)) {
-					return products;
-				}
+	public Product search(String keyword) {
+		for (Product product : products) { 
+			if (product.getName().contains(keyword)) { 
+				return product; 
 			}
-			return null;
 		}
-	}
-
-	public Product search(String string) {
-
 		return null;
 	}
 

@@ -6,7 +6,7 @@ public class DiscountedProduct extends Product {
 
 	//コンストラクタ
 	public DiscountedProduct(int id, String name, int price, int stock, double discountRate) {
-		super(id, name, stock, stock);
+		super(id, name, price, stock);
 
 		this.discountRate = discountRate;
 	}
@@ -28,8 +28,8 @@ public class DiscountedProduct extends Product {
 	//オーバーライド
 	@Override
 	public String toString() {
-		return " DiscountedProduc: id= " + id + ", name=" + name + ", price=" + price + ", stock=" + stock + ", 割引率="
-				+ discountRate;
+	    double discountedPrice = calculateDiscountedPrice(); 
+	    return super.toString() + ", 割引率=" + discountRate + ", 割引後価格=" + discountedPrice;
 	}
 
 	//割引価格を計算するメソッド
