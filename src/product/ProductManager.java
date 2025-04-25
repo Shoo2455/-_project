@@ -5,14 +5,14 @@ import java.util.List;
 
 public class ProductManager {
 
-	private List<DiscountedProduct> products;
+	private List<Product> products;
 
 	public ProductManager() {
 		this.products = new ArrayList<>();
 	}
 
 	//addProduct
-	public void addProduct(DiscountedProduct product) {
+	public void addProduct(Product product) {
 		products.add(product);
 	}
 
@@ -28,34 +28,34 @@ public class ProductManager {
 	}
 
 	//getProductByName
-	public DiscountedProduct getProductByName(String name) {
-		for (DiscountedProduct product : products) {
+	public Product getProductByName(String name) {
+		for (Product product : products) {
 			if (product.getName().equals(name)) {
 				return product;
 			}
 		}
 		return null;
 	}
-
-	//*⑤週目課題
-	////割引価格を計算するメソッド
-	public double calculateDiscountedPrice(double getPrice, double discountRate) {
-		return getPrice * (1 - discountRate);
-	}
-
-	// searchableインターフェース
-	public Product search(String keyword) {
-		for (Product product : products) { 
-			if (product.getName().contains(keyword)) { 
-				return product; 
-			}
-		}
-		return null;
-	}
-
-	public List<DiscountedProduct> getAllProducts() {
+	
+	public List<Product> getAllProducts() {
 		return products;
 
 	}
 
+	//*⑤週目課題
+	// searchableインターフェース
+	class Main implements Searchable {
+
+		public List<Product> search(String keyword) {
+			for (Product product : products) {
+				if (product.getName().contains(keyword)) {
+					return products;
+				}
+			}
+			return null;
+		}
+	}
+	public List<Product> search(String keyword) {
+		return products;
+	}
 }

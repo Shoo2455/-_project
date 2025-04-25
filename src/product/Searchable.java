@@ -1,6 +1,8 @@
 package product;
 
+import java.util.List;
+
 public interface Searchable {
 	//searchメソッド
-	Product search(String keyword);
+	List<Product> search(String keyword);
 }

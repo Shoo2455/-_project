@@ -1,5 +1,7 @@
 package product;
 
+import java.util.List;
+
 public class Main {
 	public static void main(String[] args) {
 
@@ -40,7 +42,7 @@ public class Main {
 
 		//Searchableメソッド
 		System.out.println("\n---商品名「Tシャツ」を検索して表示する---");
-		Product product = manager.search("Tシャツ");
+		List<Product> product = manager.search("Tシャツ");
 		if (product != null) {
 			System.out.println(product);
 		} else {
