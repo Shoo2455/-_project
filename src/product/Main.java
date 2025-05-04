@@ -58,15 +58,7 @@ public class Main {
 		
 		while (running) {
 			try {
-				System.out.println("--メニュ---");
-				System.out.println("1:商品追加");
-				System.out.println("2:商品情報取得");
-				System.out.println("3:商品検索");
-				System.out.println("4:商品全て表示");
-				System.out.println("5:商品削除");
-				System.out.println("0:終了");
-				
-				System.out.println("\nメニューから操作を選択してください。");
+				Menu();
 				
 				int choice = Integer.parseInt(scanner.nextLine());
 				
@@ -99,10 +91,23 @@ public class Main {
 					System.out.println("\nメニューから操作を選択してください。");
 				}
 				
-			} catch(NumberFormatException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("無効な入力です。操作は数字で選択してください。");
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
 			}
+			
 		}
 		scanner.close();
+	}private static void Menu() {
+		System.out.println("--メニュ---");
+		System.out.println("1:商品追加");
+		System.out.println("2:商品情報取得");
+		System.out.println("3:商品検索");
+		System.out.println("4:商品全て表示");
+		System.out.println("5:商品削除");
+		System.out.println("0:終了");
+		
+		System.out.println("\nメニューから操作を選択してください。");
 	}
 }

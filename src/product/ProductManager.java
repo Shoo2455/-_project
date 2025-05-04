@@ -84,7 +84,7 @@ public class ProductManager implements Searchable {
 			System.out.println(
 					"Product: id=" + id + ", name=" + name + ", price=" + price + ", stock=" + stock + "を登録しました。");
 		} catch (NumberFormatException e) {
-			System.out.println("入力エラー: " + e.getMessage());
+			System.out.println("無効な入力です。数字で入力してください。");
 		}
 	}
 
@@ -97,28 +97,29 @@ public class ProductManager implements Searchable {
 
 	// 価格チェック
 	private int validatePrice(String input) {
-		try {
+		//try {
 			int price = Integer.parseInt(input);
 			if (price < 0) {
 				throw new IllegalArgumentException("無効な入力です。価格を正しく入力してください。");
 			}
 			return price;
-		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("無効な入力です。価格は数字で入力してください。");
-		}
+		//} catch (NumberFormatException e) {
+			//throw new IllegalArgumentException("無効な入力です。価格は数字で入力してください。");
+		//}
 	}
 
 	// 在庫数チェック
 	private int validateStock(String input) {
-		try {
+		//try {
 			int stock = Integer.parseInt(input);
 			if (stock < 0) {
 				throw new IllegalArgumentException("無効な入力です。在庫を正しく入力してください。");
 			}
 			return stock;
-		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("無効な入力です。在庫数は数字で入力してください。");
-		}
+		//} catch (NumberFormatException e) {
+			//throw new IllegalArgumentException("無効な入力です。在庫数は数字で入力してください。");
+			
+		//}
 	}
 
 	//2:商品情報取得メソッド
