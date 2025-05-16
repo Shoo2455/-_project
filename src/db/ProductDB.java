@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class ProductDB {
 	public static void main(String[] args) {
 		String jdbcUrl = "jdbc:mysql://localhost:3306/product_management?useSSL=false&serverTimezone=UTC";//接続したいデータベース名
-		String username = "root";//ユーザー(select user,host from mysql.user)
+		String username = "Shoo2455";//ユーザー(select user,host from mysql.user)
 		String password = "Shoo0036";//パスワード
 
 		try {
